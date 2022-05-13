@@ -17,15 +17,9 @@ const mixStyles = (bg) => {
     ${bg ? `background: ${bg};` : ''}
     `
   return styles
-} 
+}
 const log = (title, data, bg) => {
-  if (Object.prototype.toString.call(data) === '[object Object]') {
-    console.groupCollapsed(`%c${title}`, mixStyles(bg), data)
-    console.table(data)
-    console.groupEnd()
-  } else {
-    console.log(`%c${title}`, mixStyles(bg), data)
-  }
+  console.log(`%c${title}`, mixStyles(bg), data)
 }
 export default log
 export const brush = (title, data, bg) => {
