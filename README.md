@@ -2,12 +2,12 @@
 
 beautify your console
 
-## Installation
+## Install
 ```
 $ npm install brush-log --save
 ```
 
-## Usuage
+## Usage
 ```javascript
 import log from 'brush-log';
 
