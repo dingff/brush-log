@@ -4,7 +4,7 @@ beautify your console
 
 ## Install
 ```
-$ npm install brush-log --save
+npm install brush-log --save
 ```
 
 ## Usage
