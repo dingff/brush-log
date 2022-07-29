@@ -1,6 +1,6 @@
 {
   "name": "brush-log",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "",
   "main": "src/index.min.js",
   "scripts": {
@@ -11,6 +11,6 @@
     "console",
     "beautify"
   ],
-  "author": "",
-  "license": "ISC"
+  "author": "dingff",
+  "license": "MIT"
 }
