@@ -1,9 +1,6 @@
-import { IBrush, IColorMap, IColor, IConfig } from './types'
+import { IBrush, IColorMap, IColor } from './types'
 
 const brush: IBrush = {} as IBrush
-let config: IConfig = {
-  customText: false,
-}
 const getCaller = () => {
   let error: any = null
   try {
@@ -43,18 +40,10 @@ const mixStyles = (color: IColor) => {
 }
 Object.keys(colorMap).forEach((key) => {
   brush[key as IColor] = (...rest) => {
-    let text = ''
-    if (config.customText && typeof rest[0] === 'string') {
-      text = rest.shift()
-    } else {
-      text = getCaller()
-    }
+    const text = typeof rest[0] === 'string' ? rest.shift() : getCaller()
     return [`%c${text}`, mixStyles(key as IColor), ...rest]
   }
 })
-brush.setConfig = (options) => {
-  config = { ...config, ...options }
-}
 export const {
   black,
   red,
