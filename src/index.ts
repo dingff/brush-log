@@ -14,16 +14,16 @@ const getCaller = () => {
 const colorMap: IColorMap = {
   black: '#000',
   red: '#FF0000',
-  green: '#008000',
+  green: '#5af158',
   yellow: '#FFFF00',
-  blue: '#0366F1',
+  blue: '#304ffe',
   magenta: '#FF00FF',
   cyan: '#00FFFF',
 }
 const inverseColorMap: IColorMap = {
   black: '#fff',
   red: '#fff',
-  green: '#fff',
+  green: '#000',
   yellow: '#000',
   blue: '#fff',
   magenta: '#fff',
