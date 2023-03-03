@@ -2,7 +2,7 @@ export type IColor = 'black' | 'red' | 'green' | 'yellow' | 'blue' | 'magenta' |
 export type IBrush = {
   [p in IColor]: (...rest: any) => any;
 } & {
-  setConfig: (options: IConfig) => any
+  setConfig: (options: IConfig) => any;
 }
 export type IColorMap = {
   [p in IColor]: string;
