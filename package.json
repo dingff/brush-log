@@ -1,10 +1,14 @@
 {
   "name": "brush-log",
-  "version": "1.1.5",
+  "version": "2.0.0",
   "description": "",
-  "main": "src/index.min.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/esm/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "father dev",
+    "build": "father build",
+    "build:deps": "father prebundle",
+    "prepublishOnly": "father doctor && npm run build"
   },
   "keywords": [
     "log",
@@ -12,5 +16,15 @@
     "beautify"
   ],
   "author": "dingff",
-  "license": "MIT"
+  "license": "MIT",
+  "files": [
+    "dist",
+    "compiled"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "father": "^4.1.6"
+  }
 }
