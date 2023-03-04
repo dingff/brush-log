@@ -9,7 +9,7 @@
     "build": "father build",
     "build:deps": "father prebundle",
     "prepublishOnly": "father doctor && npm run build",
-    "release": "release-it"
+    "release": "npm run build && release-it"
   },
   "keywords": [
     "log",
