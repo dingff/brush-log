@@ -1,5 +1,5 @@
 # brush-log
-给控制台来点颜色
+给控制台来点颜色！
 
 [![NPM version](https://img.shields.io/npm/v/brush-log.svg?style=flat)](https://npmjs.org/package/brush-log)
 ## 安装
