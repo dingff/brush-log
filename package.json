@@ -11,6 +11,7 @@
     "prepublishOnly": "father doctor && npm run build",
     "release": "npm run build && release-it"
   },
+  "repository": "dingff/brush-log",
   "keywords": [
     "log",
     "console",
