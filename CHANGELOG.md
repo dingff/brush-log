@@ -1,5 +1,17 @@
 
 
+# [2.3.0](https://github.com/dingff/brush-log/compare/v2.2.1...v2.3.0) (2023-03-06)
+
+
+### Bug Fixes
+
+* **getCaller:** remove try-catch ([8470597](https://github.com/dingff/brush-log/commit/84705978b2fa3db08219f8119eced0fcdaceb130))
+
+
+### Features
+
+* support radial config ([a0d4511](https://github.com/dingff/brush-log/commit/a0d45114f8e1d6c82e12df59422e39c42a4195c7))
+
 ## [2.2.1](https://github.com/dingff/brush-log/compare/v2.2.0...v2.2.1) (2023-03-06)
 
 
