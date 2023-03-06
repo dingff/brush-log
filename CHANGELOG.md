@@ -1,5 +1,12 @@
 
 
+## [2.3.1](https://github.com/dingff/brush-log/compare/v2.3.0...v2.3.1) (2023-03-06)
+
+
+### Bug Fixes
+
+* modify docs ([797eed1](https://github.com/dingff/brush-log/commit/797eed162851833e2d17daf66160142bdb62c6a7))
+
 # [2.3.0](https://github.com/dingff/brush-log/compare/v2.2.1...v2.3.0) (2023-03-06)
 
 
