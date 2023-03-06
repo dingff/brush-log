@@ -2,13 +2,8 @@ import { IBrush, IColorMap, IColor } from './types'
 
 const brush: IBrush = {} as IBrush
 const getCaller = () => {
-  let error: any = null
-  try {
-    throw Error()
-  } catch (e) {
-    error = e
-  }
-  const name = error.stack.split('\n')[3].trim().split(' ')[1]
+  const error = new Error()
+  const name = (error.stack as string).split('\n')[3].trim().split(' ')[1]
   return name
 }
 const colorMap: IColorMap = {
