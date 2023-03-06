@@ -6,6 +6,12 @@
     "release": true,
     "releaseName": "${version}"
   },
+  "npm": {
+    "publish": false
+  },
+  "hooks": {
+    "after:release": "npm run publish"
+  },
   "plugins": {
     "@release-it/conventional-changelog": {
       "preset": "angular",
