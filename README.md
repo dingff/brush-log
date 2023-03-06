@@ -18,7 +18,7 @@ import { black } from 'brush-log'
 
 console.log(...black('对象', { a: 1 }))
 ```
-### 支持的颜色
+#### 支持的颜色
 
 - `black`
 - `red`
@@ -27,3 +27,16 @@ console.log(...black('对象', { a: 1 }))
 - `blue`
 - `magenta`
 - `cyan`
+## 配置项
+```javascript
+import { mergeConfig } from 'brush-log'
+
+mergeConfig({
+  radial: 0,
+})
+```
+#### radial
+Type: `number`
+Default: `100`
+
+径向渐变的开始百分比，范围 0～100，数值越小，颜色越浅。
