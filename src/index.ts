@@ -12,11 +12,11 @@ const getCaller = () => {
   return name
 }
 const colorMap: IColorMap = {
-  black: '#000',
+  black: '#000000',
   red: '#FF0000',
-  green: '#5af158',
+  green: '#00FF00',
   yellow: '#FFFF00',
-  blue: '#304ffe',
+  blue: '#0000FF',
   magenta: '#FF00FF',
   cyan: '#00FFFF',
 }
