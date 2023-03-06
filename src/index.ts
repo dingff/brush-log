@@ -1,6 +1,9 @@
-import { IBrush, IColorMap, IColor } from './types'
+import { IBrush, IColorMap, IColor, IConfig } from './types'
 
 const brush: IBrush = {} as IBrush
+let config: IConfig = {
+  radial: 100
+}
 const getCaller = () => {
   const error = new Error()
   const name = (error.stack as string).split('\n')[3].trim().split(' ')[1]
@@ -28,7 +31,7 @@ const mixStyles = (color: IColor) => {
   const styles = `
   padding: 0px 4px;
   border-radius: 4px;
-  background-color: ${colorMap[color]};
+  background: radial-gradient(${colorMap[color]} ${config.radial}%, transparent);
   color: ${inverseColorMap[color]};
   `
   return styles
@@ -39,6 +42,9 @@ Object.keys(colorMap).forEach((key) => {
     return [`%c${text}`, mixStyles(key as IColor), ...rest]
   }
 })
+export const mergeConfig = (options: IConfig) => {
+  config = { ...config, ...options }
+}
 export const {
   black,
   red,

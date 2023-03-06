@@ -5,3 +5,7 @@ export type IBrush = {
 export type IColorMap = {
   [p in IColor]: string;
 }
+export type IConfig = {
+  /** 径向渐变，范围 0～100 */
+  radial: number;
+}
