@@ -1,5 +1,12 @@
 
 
+# [2.4.0](https://github.com/dingff/brush-log/compare/v2.3.3...v2.4.0) (2023-03-07)
+
+
+### Features
+
+* support fontSize ([3672be4](https://github.com/dingff/brush-log/commit/3672be45e439cd7a5c1126cd47453b1ada67f6be))
+
 ## [2.3.3](https://github.com/dingff/brush-log/compare/v2.3.2...v2.3.3) (2023-03-07)
 
 ## [2.3.2](https://github.com/dingff/brush-log/compare/v2.3.1...v2.3.2) (2023-03-07)
