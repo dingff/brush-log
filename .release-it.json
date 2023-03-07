@@ -4,13 +4,10 @@
   },
   "github": {
     "release": true,
-    "releaseName": "${version}"
+    "releaseName": "v${version}"
   },
   "npm": {
     "publish": false
-  },
-  "hooks": {
-    "after:release": "npm publish"
   },
   "plugins": {
     "@release-it/conventional-changelog": {
