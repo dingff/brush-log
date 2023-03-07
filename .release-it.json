@@ -10,7 +10,7 @@
     "publish": false
   },
   "hooks": {
-    "after:release": "npm run publish"
+    "after:release": "npm publish"
   },
   "plugins": {
     "@release-it/conventional-changelog": {
