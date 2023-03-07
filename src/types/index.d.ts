@@ -7,5 +7,7 @@ export type IColorMap = {
 }
 export type IConfig = {
   /** 径向渐变的起始百分比，范围 0～100 */
-  radial: number;
+  radial?: number;
+  /** 字体大小 */
+  fontSize?: string;
 }

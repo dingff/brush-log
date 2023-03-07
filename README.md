@@ -40,3 +40,8 @@ Type: `number`
 Default: `100`
 
 径向渐变的起始百分比，范围 0～100，数值越小，颜色越浅。
+#### fontSize
+Type: `string`
+Default: `inherit`
+
+字体大小。

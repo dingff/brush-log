@@ -2,7 +2,8 @@ import { IBrush, IColorMap, IColor, IConfig } from './types'
 
 const brush: IBrush = {} as IBrush
 let config: IConfig = {
-  radial: 100
+  radial: 100,
+  fontSize: 'inherit'
 }
 const getCaller = () => {
   const error = new Error()
@@ -33,6 +34,7 @@ const mixStyles = (color: IColor) => {
   border-radius: 4px;
   background: radial-gradient(${colorMap[color]} ${config.radial}%, transparent);
   color: ${inverseColorMap[color]};
+  font-size: ${config.fontSize};
   `
   return styles
 }
