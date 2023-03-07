@@ -9,7 +9,7 @@
     "build": "father build",
     "build:deps": "father prebundle",
     "prepublishOnly": "father doctor && npm run build",
-    "release": "npm run build && release-it"
+    "release": "npm run build && release-it --only-version"
   },
   "repository": "dingff/brush-log",
   "keywords": [
