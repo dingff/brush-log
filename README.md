@@ -1,24 +1,24 @@
 # brush-log
-给控制台来点颜色！
+Bring some color to the console!
 
 [![NPM version](https://img.shields.io/npm/v/brush-log.svg?style=flat)](https://npmjs.org/package/brush-log)
-## 安装
+## Install
 ```bash
 npm install brush-log --save
 ```
-## 使用
+## Usage
 ```javascript
 import brush from 'brush-log'
 
-console.log(...brush.black('对象', { a: 1 }))
+console.log(...brush.black('Hello', { a: 1 }))
 ```
-或者
+Or
 ```javascript
 import { black } from 'brush-log'
 
-console.log(...black('对象', { a: 1 }))
+console.log(...black('Hello', { a: 1 }))
 ```
-#### 支持的颜色
+#### Supported colors
 
 - `black`
 - `red`
@@ -27,7 +27,7 @@ console.log(...black('对象', { a: 1 }))
 - `blue`
 - `magenta`
 - `cyan`
-## 配置项
+## Options
 ```javascript
 import { mergeConfig } from 'brush-log'
 
@@ -39,9 +39,9 @@ mergeConfig({
 Type: `number`
 Default: `100`
 
-径向渐变的起始百分比，范围 0～100，数值越小，颜色越浅。
+Starting percentage of a radial gradient, ranging from 0 to 100. The smaller the value, the lighter the color.
 #### fontSize
 Type: `string`
 Default: `inherit`
 
-字体大小。
+The font size of the output.
