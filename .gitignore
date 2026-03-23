@@ -1,3 +1,13 @@
-/node_modules
-/dist
+# Local
 .DS_Store
+*.local
+*.log*
+
+# Dist
+node_modules
+dist/
+storybook-static
+doc_build/
+
+# IDE
+.idea

@@ -1,34 +1,75 @@
 {
   "name": "brush-log",
   "version": "2.4.1",
-  "description": "",
-  "module": "dist/esm/index.js",
-  "types": "dist/esm/index.d.ts",
-  "scripts": {
-    "dev": "father dev",
-    "build": "father build",
-    "build:deps": "father prebundle",
-    "prepublishOnly": "father doctor && npm run build",
-    "release": "npm run build && release-it --only-version"
-  },
-  "repository": "dingff/brush-log",
+  "description": "Faster debugging with color logs",
   "keywords": [
-    "log",
+    "beautify",
     "console",
-    "beautify"
+    "log"
   ],
-  "author": "dingff",
   "license": "MIT",
+  "author": "dingff",
+  "repository": "dingff/brush-log",
   "files": [
-    "dist",
-    "compiled"
+    "dist"
   ],
+  "type": "module",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
   "publishConfig": {
     "access": "public"
   },
+  "scripts": {
+    "build": "rslib build",
+    "dev": "rslib build --watch",
+    "prepare": "husky",
+    "release": "release-it --only-version"
+  },
   "devDependencies": {
-    "@release-it/conventional-changelog": "^5.1.1",
-    "father": "^4.1.6",
-    "release-it": "^15.7.0"
+    "@commitlint/cli": "^20.5.0",
+    "@commitlint/config-conventional": "^20.5.0",
+    "@release-it/conventional-changelog": "^10.0.6",
+    "@rslib/core": "^0.20.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
+    "oxfmt": "^0.41.0",
+    "oxlint": "^1.56.0",
+    "release-it": "^19.2.4"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,mjs,cjs}": "oxlint --fix",
+    "*": "oxfmt --no-error-on-unmatched-pattern"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "release-it": {
+    "git": {
+      "commitMessage": "chore: release v${version}"
+    },
+    "github": {
+      "release": true,
+      "releaseName": "v${version}",
+      "web": true
+    },
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "preset": "angular",
+        "infile": "CHANGELOG.md",
+        "ignoreRecommendedBump": true
+      }
+    },
+    "hooks": {
+      "before:init": [
+        "pnpm run build"
+      ]
+    }
   }
 }

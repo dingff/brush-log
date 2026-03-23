@@ -1,16 +1,25 @@
-import { IBrush, IColorMap, IColor, IConfig } from './types'
-
-const brush: IBrush = {} as IBrush
-let config: IConfig = {
+type Color = 'black' | 'red' | 'green' | 'yellow' | 'blue' | 'magenta' | 'cyan'
+type Brush = {
+  [p in Color]: (...rest: any) => any
+}
+type ColorMap = {
+  [p in Color]: string
+}
+type Config = {
+  radial?: number
+  fontSize?: string
+}
+const brush: Brush = {} as Brush
+let config: Config = {
   radial: 100,
-  fontSize: 'inherit'
+  fontSize: 'inherit',
 }
 const getCaller = () => {
   const error = new Error()
   const name = (error.stack as string).split('\n')[3].trim().split(' ')[1]
   return name
 }
-const colorMap: IColorMap = {
+const colorMap: ColorMap = {
   black: '#000000',
   red: '#FF0000',
   green: '#00FF00',
@@ -19,7 +28,7 @@ const colorMap: IColorMap = {
   magenta: '#FF00FF',
   cyan: '#00FFFF',
 }
-const inverseColorMap: IColorMap = {
+const inverseColorMap: ColorMap = {
   black: '#fff',
   red: '#fff',
   green: '#000',
@@ -28,7 +37,7 @@ const inverseColorMap: IColorMap = {
   magenta: '#fff',
   cyan: '#000',
 }
-const mixStyles = (color: IColor) => {
+const mixStyles = (color: Color) => {
   const styles = `
   padding: 0px 4px;
   border-radius: 4px;
@@ -39,21 +48,13 @@ const mixStyles = (color: IColor) => {
   return styles
 }
 Object.keys(colorMap).forEach((key) => {
-  brush[key as IColor] = (...rest) => {
+  brush[key as Color] = (...rest) => {
     const text = typeof rest[0] === 'string' ? rest.shift() : getCaller()
-    return [`%c${text}`, mixStyles(key as IColor), ...rest]
+    return [`%c${text}`, mixStyles(key as Color), ...rest]
   }
 })
-export const mergeConfig = (options: IConfig) => {
+export const mergeConfig = (options: Config) => {
   config = { ...config, ...options }
 }
-export const {
-  black,
-  red,
-  green,
-  yellow,
-  blue,
-  magenta,
-  cyan,
-}: IBrush = brush
+export const { black, red, green, yellow, blue, magenta, cyan }: Brush = brush
 export default brush
