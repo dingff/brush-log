@@ -4,8 +4,15 @@
   "description": "Faster debugging with color logs",
   "keywords": [
     "beautify",
+    "color",
+    "color-log",
     "console",
-    "log"
+    "debug",
+    "debugging",
+    "gradient",
+    "log",
+    "logger",
+    "typescript"
   ],
   "license": "MIT",
   "author": "dingff",
