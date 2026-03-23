@@ -2,8 +2,6 @@
 
 > Faster debugging with color logs
 
-[![NPM version](https://img.shields.io/npm/v/brush-log.svg?style=flat)](https://npmjs.org/package/brush-log)
-
 ## Install
 
 ```bash
