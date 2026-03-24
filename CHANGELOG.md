@@ -1,5 +1,11 @@
 # Changelog
 
+# [2.6.0](https://github.com/dingff/brush-log/compare/v2.5.0...v2.6.0) (2026-03-24)
+
+### Features
+
+- simplify usage ([26418f5](https://github.com/dingff/brush-log/commit/26418f5dac9c0c64055700688ac6c078a521001c))
+
 # [2.5.0](https://github.com/dingff/brush-log/compare/v2.4.1...v2.5.0) (2026-03-23)
 
 ### Bug Fixes
