@@ -5,19 +5,21 @@ type Brush = {
 type ColorMap = {
   [p in Color]: string
 }
-type Config = {
-  radial?: number
-  fontSize?: string
-}
-const brush: Brush = {} as Brush
-let config: Config = {
-  radial: 100,
-  fontSize: 'inherit',
-}
 const getCaller = () => {
-  const error = new Error()
-  const name = (error.stack as string).split('\n')[3].trim().split(' ')[1]
-  return name
+  try {
+    const stack = new Error().stack
+    if (!stack) {
+      return 'anonymous'
+    }
+    const line = stack.split('\n')[3]?.trim()
+    if (!line) {
+      return 'anonymous'
+    }
+    const match = line.match(/at\s+([^\s(]+)/)
+    return match?.[1] ?? 'anonymous'
+  } catch {
+    return 'anonymous'
+  }
 }
 const colorMap: ColorMap = {
   black: '#000000',
@@ -41,20 +43,25 @@ const mixStyles = (color: Color) => {
   const styles = `
   padding: 0px 4px;
   border-radius: 4px;
-  background: radial-gradient(${colorMap[color]} ${config.radial}%, transparent);
+  background: ${colorMap[color]};
   color: ${inverseColorMap[color]};
-  font-size: ${config.fontSize};
   `
   return styles
 }
-Object.keys(colorMap).forEach((key) => {
-  brush[key as Color] = (...rest) => {
+const createBrush = (color: Color) => {
+  return (...rest: any) => {
     const text = typeof rest[0] === 'string' ? rest.shift() : getCaller()
-    return [`%c${text}`, mixStyles(key as Color), ...rest]
+    return [`%c${text}`, mixStyles(color), ...rest]
   }
-})
-export const mergeConfig = (options: Config) => {
-  config = { ...config, ...options }
 }
-export const { black, red, green, yellow, blue, magenta, cyan }: Brush = brush
+const brush: Brush = {
+  black: createBrush('black'),
+  red: createBrush('red'),
+  green: createBrush('green'),
+  yellow: createBrush('yellow'),
+  blue: createBrush('blue'),
+  magenta: createBrush('magenta'),
+  cyan: createBrush('cyan'),
+}
+export const { black, red, green, yellow, blue, magenta, cyan } = brush
 export default brush
